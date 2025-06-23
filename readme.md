@@ -4,11 +4,12 @@
 
 This is a fully functional Streamlit-based statistical arbitrage application that uses Principal Component Analysis (PCA) and clustering techniques to identify cointegrated stock pairs and test long-short trading strategies on S&P 500 stocks. The application provides an interactive web interface for financial analysis and backtesting of statistical arbitrage strategies.
 
-**Current Status**: Production-ready application with complete workflow from data ingestion to strategy backtesting.
+## Running
+- streamlit python app.py
+- open https://localhost5000
+
 
 ## System Architecture
-
-The application follows a modular, object-oriented architecture built on Python with Streamlit as the web framework. The system is designed as a single-page application with multiple components handling different aspects of the statistical analysis pipeline.
 
 ### Frontend Architecture
 - **Framework**: Streamlit for web UI and interactive components
