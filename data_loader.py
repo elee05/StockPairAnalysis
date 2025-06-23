@@ -48,7 +48,7 @@ class DataLoader:
             'CVS', 'TMUS', 'CI', 'REGN', 'PYPL', 'MDLZ', 'SO', 'PLD', 'ZTS',
             'ISRG', 'CB', 'DUK', 'C', 'MMM', 'SCHW', 'ITW', 'TJX', 'BSX',
             'MO', 'HUM', 'SLB', 'EOG', 'BDX', 'AON', 'USB', 'ICE', 'EQIX',
-            'WM', 'GE', 'APD', 'CL', 'NSC', 'EMR', 'FCX', 'PNC', 'ATVI',
+            'WM', 'GE', 'APD', 'CL', 'NSC', 'EMR', 'FCX', 'PNC', 'MSCI',
             'MCD', 'CSX', 'FIS', 'MMC', 'TFC', 'GM', 'F', 'ADSK', 'ECL'
         ]
     
@@ -70,6 +70,10 @@ class DataLoader:
         
         # Select subset of symbols
         selected_symbols = _self.sp500_symbols[:num_stocks]
+        
+        # Filter out delisted symbols (like ATVI)
+        excluded_symbols = ['ATVI']  # Add known delisted symbols
+        selected_symbols = [s for s in selected_symbols if s not in excluded_symbols]
         
         # Download data
         successful_symbols = []
@@ -108,7 +112,7 @@ class DataLoader:
         price_data = pd.concat(price_data_list, axis=1)
         
         # Forward fill and backward fill missing values
-        price_data = price_data.fillna(method='ffill').fillna(method='bfill')
+        price_data = price_data.ffill().bfill()
         
         # Remove stocks with too much missing data
         missing_threshold = 0.1  # Allow up to 10% missing data

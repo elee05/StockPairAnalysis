@@ -103,6 +103,14 @@ class Visualization:
         pc1 = components[:, 0]
         pc2 = components[:, 1]
         
+        # Ensure we have the correct number of stock symbols
+        # In case there's a mismatch, use the minimum length
+        min_length = min(len(cluster_labels), len(stock_symbols), len(pc1))
+        cluster_labels = cluster_labels[:min_length]
+        stock_symbols = stock_symbols[:min_length]
+        pc1 = pc1[:min_length]
+        pc2 = pc2[:min_length]
+        
         # Create scatter plot
         fig = go.Figure()
         
@@ -110,12 +118,13 @@ class Visualization:
         unique_labels = np.unique(cluster_labels)
         for i, label in enumerate(unique_labels):
             mask = cluster_labels == label
+            mask_indices = np.where(mask)[0]
             fig.add_trace(go.Scatter(
                 x=pc1[mask],
                 y=pc2[mask],
                 mode='markers',
                 name=f'Cluster {label}',
-                text=[stock_symbols[j] for j in np.where(mask)[0]],
+                text=[stock_symbols[j] for j in mask_indices],
                 hovertemplate='<b>%{text}</b><br>PC1: %{x:.3f}<br>PC2: %{y:.3f}<extra></extra>',
                 marker=dict(
                     size=8,
