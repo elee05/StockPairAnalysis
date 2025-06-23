@@ -71,19 +71,4 @@ This is a fully functional Streamlit-based statistical arbitrage application tha
 - **Web Framework**: streamlit for UI
 - **Data Fetching**: yfinance, requests for external data
 
-### Configuration Management
-- **Package Management**: uv with pyproject.toml for dependency resolution
-- **Streamlit Config**: Custom server configuration in .streamlit/config.toml
-
-## Deployment Strategy
-
-### Platform
-- **Runtime**: Python 3.11 with Nix package management
-- **Port Configuration**: Streamlit server on port 5000
-
-
-### Workflow Setup
-- **Run Button**: Configured for easy one-click deployment
-- **Process Monitoring**: Port waiting and parallel task execution
-- **Development**: Hot reload enabled for iterative development
 
