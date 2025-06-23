@@ -75,24 +75,12 @@ The application follows a modular, object-oriented architecture built on Python 
 ## Deployment Strategy
 
 ### Platform
-- **Target**: Replit Autoscale deployment
 - **Runtime**: Python 3.11 with Nix package management
 - **Port Configuration**: Streamlit server on port 5000
 
-### Deployment Configuration
-- **Environment**: Nix-based with stable-24_05 channel
-- **Process Management**: Streamlit run command with custom port
-- **Scalability**: Autoscale deployment target for variable load handling
 
 ### Workflow Setup
 - **Run Button**: Configured for easy one-click deployment
 - **Process Monitoring**: Port waiting and parallel task execution
 - **Development**: Hot reload enabled for iterative development
 
-## Changelog
-
-- June 23, 2025. Initial setup
-
-## User Preferences
-
-Preferred communication style: Simple, everyday language.
