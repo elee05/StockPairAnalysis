@@ -25,13 +25,13 @@ Fetches S&P 500 stock symbols and historical price data from Wikipedia for S&P 5
 - **Clustering**: K-means clustering for stock grouping
 - **Cointegration Testing**: Statistical tests for pair relationships
 
-### 3. Trading Strategies
+### Trading Strategies
 - **Spread Calculation**: Computes spreads between cointegrated pairs
 - **Signal Generation**: Z-score based entry/exit signals
 - **Risk Management**: Stop-loss and position sizing logic
 - **Backtesting Framework**: Historical strategy performance evaluation
 
-### 4. Visualization 
+### Visualization 
 - **PCA Visualization**: Explained variance and component analysis plots
 - **Strategy Performance**: Equity curves and drawdown analysis
 - **Pair Analysis**: Spread and correlation visualizations
