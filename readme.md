@@ -8,47 +8,6 @@ This is a fully functional Streamlit-based statistical arbitrage application tha
 - streamlit python app.py
 - open https://localhost5000
 
-
-## System Architecture
-
-### Frontend Architecture
-- **Framework**: Streamlit for web UI and interactive components
-- **Visualization**: Plotly for interactive charts and graphs
-- **Layout**: Wide layout with expandable sidebar for parameter configuration
-- **State Management**: Streamlit session state for maintaining analysis results across interactions
-
-### Backend Architecture
-- **Modular Design**: Separate classes for different functionalities (DataLoader, StatisticalAnalysis, TradingStrategies, Visualization)
-- **Data Processing**: Pandas and NumPy for data manipulation and numerical computations
-- **Statistical Analysis**: Scikit-learn for PCA and clustering, Statsmodels for cointegration testing
-- **Financial Data**: yfinance for real-time stock data retrieval
-
-## Key Components
-
-### 1. Data Loading (`DataLoader`)
-- **Purpose**: Fetches S&P 500 stock symbols and historical price data
-- **Data Source**: Wikipedia for S&P 500 list, Yahoo Finance for price data
-- **Fallback Strategy**: Predefined list of major stocks if web scraping fails
-- **Data Cleaning**: Handles symbol formatting and missing data
-
-### 2. Statistical Analysis (`StatisticalAnalysis`)
-- **PCA Implementation**: Dimensionality reduction on stock returns
-- **Clustering**: K-means clustering for stock grouping
-- **Cointegration Testing**: Statistical tests for pair relationships
-- **Data Preprocessing**: Standardization and normalization
-
-### 3. Trading Strategies (`TradingStrategies`)
-- **Spread Calculation**: Computes spreads between cointegrated pairs
-- **Signal Generation**: Z-score based entry/exit signals
-- **Risk Management**: Stop-loss and position sizing logic
-- **Backtesting Framework**: Historical strategy performance evaluation
-
-### 4. Visualization (`Visualization`)
-- **Interactive Charts**: Plotly-based visualizations for analysis results
-- **PCA Visualization**: Explained variance and component analysis plots
-- **Strategy Performance**: Equity curves and drawdown analysis
-- **Pair Analysis**: Spread and correlation visualizations
-
 ## Data Flow
 
 1. **Data Ingestion**: Application fetches S&P 500 symbols from Wikipedia and historical price data from Yahoo Finance
@@ -57,6 +16,27 @@ This is a fully functional Streamlit-based statistical arbitrage application tha
 4. **Pair Identification**: Cointegration testing within clusters to identify tradeable pairs
 5. **Strategy Implementation**: Signal generation and backtesting on identified pairs
 6. **Visualization**: Interactive charts displaying analysis results and strategy performance
+
+
+## Key Components
+Fetches S&P 500 stock symbols and historical price data from Wikipedia for S&P 500 list, Yahoo Finance for price data however, predefined list of major stocks if web scraping fails
+
+- **PCA Implementation**: Dimensionality reduction on stock returns
+- **Clustering**: K-means clustering for stock grouping
+- **Cointegration Testing**: Statistical tests for pair relationships
+
+### 3. Trading Strategies
+- **Spread Calculation**: Computes spreads between cointegrated pairs
+- **Signal Generation**: Z-score based entry/exit signals
+- **Risk Management**: Stop-loss and position sizing logic
+- **Backtesting Framework**: Historical strategy performance evaluation
+
+### 4. Visualization 
+- **PCA Visualization**: Explained variance and component analysis plots
+- **Strategy Performance**: Equity curves and drawdown analysis
+- **Pair Analysis**: Spread and correlation visualizations
+
+
 
 ## External Dependencies
 
